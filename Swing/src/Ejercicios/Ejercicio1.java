@@ -42,7 +42,7 @@ public class Ejercicio1 extends JFrame{
 				label.setText("Texto" + i);
 			}
 		}
-		
+		//hola
 		
 		
 		setVisible(true);
