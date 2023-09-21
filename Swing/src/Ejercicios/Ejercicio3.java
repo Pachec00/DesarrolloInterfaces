@@ -45,7 +45,6 @@ public class Ejercicio3 extends JFrame {
 		boton1.addActionListener(new BotonPulsadoListener(resultado));
 		boton2.addActionListener(new BotonPulsadoListener(resultado));
 		boton3.addActionListener(new BotonPulsadoListener(resultado));
-		
 
 		setVisible(true);
 	}
