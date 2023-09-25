@@ -3,6 +3,7 @@ package Ejercicios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class BotonPulsadoListener implements ActionListener {
@@ -14,7 +15,7 @@ public class BotonPulsadoListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		resultado.setText("Has pulsado el boton" + e.getActionCommand());
+		resultado.setText("Has pulsado el boton " + e.getActionCommand());
 
 	}
 

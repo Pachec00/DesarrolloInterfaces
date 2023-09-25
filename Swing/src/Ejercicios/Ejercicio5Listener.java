@@ -42,6 +42,30 @@ public class Ejercicio5Listener implements ActionListener {
 			String i = String.valueOf(getX());
 			r.setText(i + e.getActionCommand());
 		}
+		
+		/*
+		 * if(e.getActionCommand().equals("+")) {
+			if (r.getText().isEmpty()) {
+				setX(0);
+				String i = String.valueOf(getX());
+				r.setText(i + e.getActionCommand());
+			} else {
+				setX(getX() + 1);
+				String i = String.valueOf(getX());
+				r.setText(i + e.getActionCommand());
+			}
+		}else if (e.getActionCommand().equals("-")) {
+			if (r.getText().isEmpty()) {
+				setX(0-1);
+				String i = String.valueOf(getX());
+				r.setText(i + e.getActionCommand());
+			} else {
+				setX(getX() - 1);
+				String i = String.valueOf(getX());
+				r.setText(i + e.getActionCommand());
+			}
+		}
+		 */
 
 	}
 
