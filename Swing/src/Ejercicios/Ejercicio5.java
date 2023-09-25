@@ -7,31 +7,31 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Ejercicio5 extends JFrame{
-	
+public class Ejercicio5 extends JFrame {
+
 	public void ejercicio5() {
 		setSize(600, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		//Container
-		
+
+		// Container
+
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
-		
-		//Button
-		
+
+		// Button
+
 		JButton boton = new JButton();
 		boton.setText("+");
-		
-		//Label
-		
+
+		// Label
+
 		JLabel r = new JLabel();
-		
+
 		c.add(boton);
-		
-		//Acciones
-		
-		//boton.addActionListener();
+		c.add(r);
+
+		// Acciones
+		boton.addActionListener(new Ejercicio5Listener(r));
 		
 		setVisible(true);
 	}
