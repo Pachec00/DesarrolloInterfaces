@@ -27,7 +27,7 @@ public class Ejercicio3 extends JFrame {
 		boton2.setText("2");
 		boton3.setText("3");
 
-		// Label (Provisional)
+		// Label
 		JLabel resultado = new JLabel();
 
 		// Contenedor
