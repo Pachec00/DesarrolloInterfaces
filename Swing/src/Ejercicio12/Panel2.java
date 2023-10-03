@@ -8,8 +8,9 @@ public class Panel2 extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @param main 
 	 */
-	public Panel2() {
+	public Panel2(Main main) {
 
 	}
 

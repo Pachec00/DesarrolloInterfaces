@@ -47,7 +47,7 @@ public class Ejercicio3 extends JFrame {
 		boton3.addActionListener(new BotonPulsadoListener(resultado));
 		
 		
-		//rama ceu
+		
 
 		setVisible(true);
 	}
