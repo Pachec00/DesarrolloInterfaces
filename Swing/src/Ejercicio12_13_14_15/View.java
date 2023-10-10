@@ -1,4 +1,4 @@
-package Ejercicio12;
+package Ejercicio12_13_14_15;
 
 import javax.swing.JPanel;
 

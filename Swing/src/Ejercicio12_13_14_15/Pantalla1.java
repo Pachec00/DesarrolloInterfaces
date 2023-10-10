@@ -1,4 +1,4 @@
-package Ejercicio12;
+package Ejercicio12_13_14_15;
 
 import javax.swing.JPanel;
 import java.awt.GridLayout;
@@ -6,6 +6,12 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
 
 public class Pantalla1 extends View {
 
@@ -20,7 +26,11 @@ public class Pantalla1 extends View {
 		setLayout(null);
 		
 		JButton boton1 = new JButton("1");
-		boton1.setBounds(0, 11, 206, 141);
+		boton1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		boton1.setBounds(49, 168, 66, 32);
 		add(boton1);
 		boton1.setEnabled(false);
 		
@@ -31,7 +41,7 @@ public class Pantalla1 extends View {
 				
 			}
 		});
-		boton2.setBounds(216, 11, 224, 141);
+		boton2.setBounds(160, 168, 66, 32);
 		add(boton2);
 		
 		JButton boton3 = new JButton("3");
@@ -40,11 +50,11 @@ public class Pantalla1 extends View {
 				controller.irPantalla3(txt.getText());
 			}
 		});
-		boton3.setBounds(0, 163, 206, 126);
+		boton3.setBounds(286, 167, 85, 34);
 		add(boton3);
 		
 		txt = new JTextField();
-		txt.setBounds(216, 163, 224, 126);
+		txt.setBounds(112, 69, 175, 49);
 		add(txt);
 		txt.setColumns(10);
 		
