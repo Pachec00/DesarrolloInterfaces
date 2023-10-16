@@ -5,8 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import Ejercicio1.modelo.Pelicula;
+import Ejercicio1.service.PeliculasServiceException;
+import Ejercicio1.service.PeliculasServices;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class App {
@@ -58,7 +65,15 @@ public class App {
 		JButton consultar = new JButton("Consultar");
 		consultar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				PeliculasServices ps = new PeliculasServices();
+				Pelicula p = new Pelicula();
+				List<Pelicula> pe = new ArrayList<Pelicula>();
+				try {
+					pe = ps.consultarPeliculas();
+				} catch (PeliculasServiceException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		consultar.setBounds(308, 38, 89, 23);
