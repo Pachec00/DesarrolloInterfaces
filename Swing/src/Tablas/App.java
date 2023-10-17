@@ -47,7 +47,7 @@ public class App {
 		frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(99, 38, 382, 294);
+		scrollPane.setBounds(105, 11, 382, 294);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
@@ -66,7 +66,7 @@ public class App {
 				model.fireTableDataChanged();
 			}
 		});
-		añadir.setBounds(320, 356, 89, 23);
+		añadir.setBounds(497, 30, 89, 23);
 		frame.getContentPane().add(añadir);
 	}
 }
