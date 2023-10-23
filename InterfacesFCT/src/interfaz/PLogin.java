@@ -1,9 +1,15 @@
 package interfaz;
 
 import javax.swing.JTextField;
+
+import modelo.Usuarios;
+import services.usuarioService;
+import services.usuarioServiceException;
+
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -27,16 +33,39 @@ public class PLogin extends View {
 		add(textField);
 		textField.setColumns(10);
 
+		passwordField = new JPasswordField();
+		passwordField.setBounds(164, 127, 86, 20);
+		add(passwordField);
+
 		JButton btnLogin = new JButton("Entrar");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Ir a pantalla de bienvenida
+				// Llamar al servicio
+				usuarioService us = new usuarioService();
+				Usuarios user = new Usuarios();
+
+				user.setEmail(textField.getText());
+				user.setPass(passwordField.getName());
+				try {
+					us.servicioLogin(textField.getText(), passwordField.getName());
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				} catch (usuarioServiceException e1) {
+					e1.printStackTrace();
+				}
+
+				controller.irBienvenida();
 			}
 		});
 		btnLogin.setBounds(217, 173, 89, 23);
 		add(btnLogin);
 
 		JButton btnAlta = new JButton("Solicitar acceso");
+		btnAlta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.irAcceso();
+			}
+		});
 		btnAlta.setBounds(248, 266, 89, 23);
 		add(btnAlta);
 
@@ -44,19 +73,6 @@ public class PLogin extends View {
 		btnSalir.setBounds(347, 266, 89, 23);
 		add(btnSalir);
 
-		passwordField = new JPasswordField();
-		passwordField.setBounds(164, 127, 86, 20);
-		add(passwordField);
-		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 11, 101, 22);
-		add(menuBar);
-		
-		JMenu mnNewMenu = new JMenu("New menu");
-		mnNewMenu.setBounds(-14, 7, 115, 26);
-		add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
-		mnNewMenu.add(mntmNewMenuItem);
 	}
+
 }
