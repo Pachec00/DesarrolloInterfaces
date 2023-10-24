@@ -89,24 +89,25 @@ public class PAcceso extends View {
 				
 				usuarioService us = new usuarioService();
 				Usuarios user = new Usuarios();
-				char [] a = pass.getPassword();
-				char [] b = pass.getPassword();
-				String pass = new String(a);
-				String pass1 = new String(b);
-				if(pass.equals(b)) {
-					user.setEmail(email.getText());
-					user.setPass(pass);
-					user.setNombre(nombre.getText());
-					user.setApellidos(apellido.getText());
-					user.setActivo(0);
-					user.setCiclo("DAM");
+				
+				String p = new String(pass.getPassword());
+				String p1 = new String(pass.getPassword());
+				if(p.equals(p1)) {
 					try {
+						user.setEmail(email.getText());
+						user.setPass(p);
+						user.setNombre(nombre.getText());
+						user.setApellidos(apellido.getText());
+						user.setActivo(0);
+						user.setCiclo("DAM");
+						
 						us.registrarUsuario(user);
 						System.out.println("Usuario registrado");
 					} catch (SQLException e1) {
 						e1.printStackTrace();
 					} catch (usuarioServiceException e1) {
 						e1.printStackTrace();
+						System.out.println("Error al registrar el usuario");
 					}
 				}else {
 					//Las contraseñas no coinciden

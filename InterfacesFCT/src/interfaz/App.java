@@ -3,6 +3,7 @@ package interfaz;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -10,6 +11,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import modelo.Usuarios;
+import services.usuarioService;
+import services.usuarioServiceException;
 
 public class App {
 
@@ -19,8 +22,9 @@ public class App {
 	private PBienvenida pBienvenida;
 	private JMenuBar menuBar;
 	private PConsultarRegistro pRegistro;
-	 private PCrearRegistro pNRegistro;
-	 private PAcceso pAcceso;
+	private PCrearRegistro pNRegistro;
+	private PAcceso pAcceso; 
+	private Usuarios user;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -69,6 +73,10 @@ public class App {
 		JMenu1.add(item3);
 		JMenu1.add(item4);
 		
+		
+		
+		
+		
 		item1.addActionListener(new ActionListener() {
 			
 			@Override
@@ -111,9 +119,11 @@ public class App {
 	}
 
 	public void irBienvenida() {
+		pBienvenida.actualizar(user.getNombre());
 		frame.setContentPane(pBienvenida);
 		menuBar.setVisible(true);
 		frame.revalidate();
+		
 	}
 	
 	public void irAcceso() {
@@ -132,4 +142,22 @@ public class App {
 		frame.revalidate();
 		
 	}
+	public void login(String email , String pass) {
+		try {
+			// Llamar al servicio
+			usuarioService us = new usuarioService();
+			user = us.servicioLogin(email,pass);
+			irBienvenida();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		} catch (usuarioServiceException e1) {
+			e1.printStackTrace();
+			System.out.println("Email o contraseña no coinciden");
+		}
+		
+	}
+	
+	
+	
+	
 }

@@ -40,21 +40,11 @@ public class PLogin extends View {
 		JButton btnLogin = new JButton("Entrar");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Llamar al servicio
-				usuarioService us = new usuarioService();
-				Usuarios user = new Usuarios();
-
-				user.setEmail(textField.getText());
-				user.setPass(passwordField.getName());
-				try {
-					us.servicioLogin(textField.getText(), passwordField.getName());
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				} catch (usuarioServiceException e1) {
-					e1.printStackTrace();
-				}
-
-				controller.irBienvenida();
+				char a [] = passwordField.getPassword();
+				String pass = new String(a);
+				String email = textField.getText();
+				controller.login(email, pass);
+				
 			}
 		});
 		btnLogin.setBounds(217, 173, 89, 23);
