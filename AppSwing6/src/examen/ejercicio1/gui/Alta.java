@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 
 public class Alta extends View{
 	
-	private JMenuBar menuBar;
+	
 	
 
 	
@@ -22,7 +22,7 @@ public class Alta extends View{
 		super(controller);
 		setLayout(null);
 		
-		menuBar = new JMenuBar();
+		
 		
 		JLabel lblNewLabel = new JLabel("Nombre marca");
 		lblNewLabel.setBounds(83, 116, 85, 14);
@@ -48,23 +48,6 @@ public class Alta extends View{
 		añadir.setBounds(316, 149, 89, 23);
 		add(añadir);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(10, 11, 101, 22);
-		add(menuBar);
 		
-		JMenu mnMenu = new JMenu("Menu");
-		menuBar.add(mnMenu);
-		
-		JMenuItem menuConsultar = new JMenuItem("Consultar");
-		menuConsultar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0));
-		mnMenu.add(menuConsultar);
-		
-		JMenuItem menuCerrar = new JMenuItem("Cerrar sesión");
-		menuCerrar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F10, 0));
-		mnMenu.add(menuCerrar);
-		
-		JMenuItem menuSalir = new JMenuItem("Salir");
-		menuSalir.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F12, 0));
-		mnMenu.add(menuSalir);
 	}
 }

@@ -2,6 +2,8 @@ package examen.ejercicio1.gui;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
@@ -30,6 +32,13 @@ public class PBienvenida extends View {
 		add(check);
 		
 		JButton entrar = new JButton("Entrar");
+		entrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.irConsultar();
+			}
+		});
 		entrar.setBounds(307, 331, 89, 23);
 		add(entrar);
 		
