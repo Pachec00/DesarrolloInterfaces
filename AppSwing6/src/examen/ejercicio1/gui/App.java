@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -12,10 +14,15 @@ import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import javax.swing.KeyStroke;
 
+import examen.ejercicio1.modelo.Coche;
+import examen.ejercicio1.services.ExamenService;
+import javax.swing.JScrollPane;
+
 public class App {
 
 	private JFrame frame;
 	private JTable table;
+	
 
 	private PBienvenida bienvenida;
 	private Alta alta;
@@ -69,6 +76,9 @@ public class App {
 		alta = new Alta(this);
 		consultar = new Consultar(this);
 
+		table = new JTable();
+		
+
 		menuBar.setVisible(false);
 		frame.setJMenuBar(menuBar);
 
@@ -120,6 +130,9 @@ public class App {
 			}
 		});
 		menu.add(menu3);
+		frame.getContentPane().setLayout(null);
+
+		
 
 		frame.setContentPane(bienvenida);
 
@@ -139,6 +152,9 @@ public class App {
 		menuBar.setVisible(true);
 		menuAlta.setVisible(false);
 		menuConsultar.setVisible(true);
+//		scrollPane.setVisible(true);
+//		table.setVisible(true);
+
 		frame.revalidate();
 
 	}
@@ -149,4 +165,20 @@ public class App {
 		frame.revalidate();
 	}
 
+	public void consultar() {
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(94, 11, 510, 314);
+		frame.getContentPane().add(scrollPane);
+
+		TableModel model = new TableModel();
+		scrollPane.setViewportView(table);
+		table.setModel(model);
+		
+		ExamenService es = new ExamenService();
+		List<Coche> c = es.consultarCoches();
+		for ( int i = 0; i < c.size(); i++) {
+			model.getCoches().add(c.get(i));
+			model.fireTableDataChanged();
+		}
+	}
 }
