@@ -55,6 +55,21 @@ public class TableModel extends AbstractTableModel {
 		coches = es.consultarCoches();
 		Coche coche = coches.get(rowIndex);
 		String nombreColumn = columnas.get(columnIndex);
+		if (nombreColumn.equals("Marca")) {
+			return coche.getMarca();
+		}
+		if (nombreColumn.equals("Modelo")) {
+			return coche.getModelo();
+		}
+		if (nombreColumn.equals("Matricula")) {
+			return coche.getMatricula();
+		}
+		if (nombreColumn.equals("Año")) {
+			return coche.getAño();
+		}
+		if (nombreColumn.equals("Disponible")) {
+			return coche.getDisponible();
+		}
 		return "Error";
 	}
 
