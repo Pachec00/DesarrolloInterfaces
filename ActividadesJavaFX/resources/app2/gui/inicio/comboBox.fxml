@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="389.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="actividad2.app.gui.inicio.ComboBoxController">
+   <children>
+      <ComboBox fx:id="combo" layoutX="210.0" layoutY="118.0" prefWidth="150.0" />
+      <Button fx:id="limpiar" layoutX="248.0" layoutY="175.0" mnemonicParsing="false" text="Limpiar" />
+      <Button fx:id="imrprimirtext" layoutX="248.0" layoutY="218.0" mnemonicParsing="false" text="Imprimir" />
+      <TextField fx:id="resultado" layoutX="202.0" layoutY="290.0" />
+   </children>
+</AnchorPane>

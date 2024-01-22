@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="actividad2.app.gui.inicio.InicioController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="menuApp" mnemonicParsing="false" text="App">
+            <items>
+              <MenuItem fx:id="sesionItem" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+                  <MenuItem fx:id="salirItem" mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuComponentes" mnemonicParsing="false" text="Componentes">
+               <items>
+                  <MenuItem fx:id="comboBoxItem" mnemonicParsing="false" onAction="#combo" text="ComboBox" />
+                  <MenuItem fx:id="datePickerItem" mnemonicParsing="false" onAction="#date" text="DatePicker" />
+                  <MenuItem fx:id="colorPickerItem" mnemonicParsing="false" onAction="#color" text="ColorPicker" />
+                  <MenuItem fx:id="sliderItem" mnemonicParsing="false" onAction="#slider" text="Slider" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="idMensaje" alignment="CENTER" layoutX="148.0" layoutY="44.0" prefHeight="243.0" prefWidth="305.0" text="Elige la opción que prefieras del menu ">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
