@@ -30,7 +30,7 @@ public class loginController extends AppController {
 	@FXML
 	void login(ActionEvent event) {
 		try {
-			// Usuario usuario = ls.login(tfNombre.getText(), tfPass.getText());
+
 			Usuario usuario = ls.login(tfNombre.getText(), tfPass.getText());
 			alerta.setText("Acceso correcto");
 			alerta.setVisible(true);
