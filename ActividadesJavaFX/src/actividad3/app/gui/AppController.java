@@ -1,8 +1,8 @@
-package actividad2.app.gui;
+package actividad3.app.gui;
 
 import java.io.IOException;
 
-import actividad2.App;
+import actividad3.App;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,14 +10,9 @@ import javafx.stage.Stage;
 
 public class AppController {
 
-	public static final String FXML_LOGIN ="/app2/gui/login/login.fxml";
-	public static final String FXML_INICIO ="/app2/gui/inicio/inicio.fxml";
-	public static final String FXML_COMBO ="/app2/gui/inicio/comboBox.fxml";
-	public static final String FXML_DATE ="/app2/gui/inicio/datePicker.fxml";
-	public static final String FXML_COLOR ="/app2/gui/inicio/coloPicker.fxml";
-	public static final String FXML_SLIDER ="/app2/gui/inicio/slider.fxml";
-	public static final String FXML_TABLE = "/app2/gui/inicio/tabla.fxml";
-	
+	public static final String FXML_INICIO = "/app3/gui/inicio/inicio.fxml";
+	public static final String FXML_NUEVO = "/app3/gui/nuevo/nuevo.fxml";
+	public static final String FXML_NUEVO1 = "/app3/gui/nuevo/nuevo1.fxml";
 	
 	private static Stage stage;
 
@@ -28,8 +23,7 @@ public class AppController {
 	public AppController(Stage primaryStage) {
 		stage = primaryStage;
 	}
-	
-	
+
 	public AppController cambiarVista(String fxml) {
 		try {
 
@@ -70,5 +64,4 @@ public class AppController {
 		}
 		return null;
 	}
-
 }

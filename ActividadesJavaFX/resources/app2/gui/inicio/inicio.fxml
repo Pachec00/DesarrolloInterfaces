@@ -24,6 +24,7 @@
                   <MenuItem fx:id="datePickerItem" mnemonicParsing="false" onAction="#date" text="DatePicker" />
                   <MenuItem fx:id="colorPickerItem" mnemonicParsing="false" onAction="#color" text="ColorPicker" />
                   <MenuItem fx:id="sliderItem" mnemonicParsing="false" onAction="#slider" text="Slider" />
+                  <MenuItem fx:id="tableItem" mnemonicParsing="false" onAction="#table" text="tabla" />
                </items>
           </Menu>
         </menus>

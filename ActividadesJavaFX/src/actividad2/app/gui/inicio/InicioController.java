@@ -40,30 +40,40 @@ public class InicioController extends AppController{
     @FXML
     private MenuItem sliderItem;
     
+    @FXML
+    private MenuItem tableItem;
     
+    @FXML
     public void combo(ActionEvent event) {
     	panel.setCenter(cargarVista(FXML_COMBO));
     }
     
-    
+    @FXML
     public void color(ActionEvent event) {
     	panel.setCenter(cargarVista(FXML_COLOR));
     }
     
-    
+    @FXML
     public void date(ActionEvent event) {
     	panel.setCenter(cargarVista(FXML_DATE));
     }
     
-    
+    @FXML
     public void slider(ActionEvent event) {
     	panel.setCenter(cargarVista(FXML_SLIDER));
     }
     
+    @FXML
     public void cerrarSesion(ActionEvent event) {
     	panel.setCenter(cargarVista(FXML_LOGIN));
     }
     
+    @FXML
+    public void table(ActionEvent e) {
+    	panel.setCenter(cargarVista(FXML_TABLE));
+    }
+    
+    @FXML
     public void salir(ActionEvent event) {
     	System.exit(0);
     }
