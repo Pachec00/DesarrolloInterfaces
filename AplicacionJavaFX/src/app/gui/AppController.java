@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class AppController {
 
 	public static final String FXML_LOGIN = "/app/gui/login/login.fxml";
+	public static final String FXML_REGISTRAR = "/app/gui/registrar/registrar.fxml";
 	
 	private static Stage stage;
 

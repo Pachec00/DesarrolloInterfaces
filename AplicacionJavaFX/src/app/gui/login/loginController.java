@@ -26,12 +26,12 @@ public class loginController extends AppController {
 
 	@FXML
 	void entrar(ActionEvent event) {
-
+		
 	}
 
 	@FXML
 	void registrar(ActionEvent event) {
-
+		cambiarVista(FXML_REGISTRAR);
 	}
 
 	@FXML
@@ -42,4 +42,6 @@ public class loginController extends AppController {
 	public void irProyectos(ActionEvent event) {
 
 	}
+	
+	
 }
