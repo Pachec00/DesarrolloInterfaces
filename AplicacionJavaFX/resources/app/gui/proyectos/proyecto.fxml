@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.proyectos.ProyectoController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" layoutX="99.0" layoutY="73.0" prefHeight="252.0" prefWidth="431.0">
+              <columns>
+                <TableColumn fx:id="tableProyectoItem" prefWidth="75.0" text="Proyectos" />
+                  <TableColumn fx:id="tableEstadoItem" prefWidth="75.0" text="Estado" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="menuProyecto" mnemonicParsing="false" text="Proyecto">
+            <items>
+              <MenuItem fx:id="proyectoItem" mnemonicParsing="false" onAction="#nuevo" text="Nuevo Proyecto" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuAjustes" mnemonicParsing="false" text="Ajustes">
+            <items>
+              <MenuItem fx:id="ajustesItem" mnemonicParsing="false" onAction="#ajustes" text="Ajustes Generales" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuPerfil" mnemonicParsing="false" text="Perfil">
+            <items>
+                  <MenuItem fx:id="sesionItem" mnemonicParsing="false" onAction="#sesion" text="Cerrar Sesión" />
+              <MenuItem fx:id="perfilItem" mnemonicParsing="false" onAction="#editar" text="Editar Perfil" />
+                  <MenuItem fx:id="salirItem" mnemonicParsing="false" onAction="#salir" text="salir" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

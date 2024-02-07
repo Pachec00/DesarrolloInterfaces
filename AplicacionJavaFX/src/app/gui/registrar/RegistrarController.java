@@ -26,7 +26,11 @@ public class RegistrarController extends AppController {
 
 	@FXML
 	void continuar(ActionEvent event) {
-
+		/*
+		 * Si el correo o usuario ya existe avisar con pop up
+		 * Si todo esta correcto iniciar sesion directamente
+		 * 
+		 */
 	}
 
 	@FXML

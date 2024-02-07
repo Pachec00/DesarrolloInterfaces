@@ -12,6 +12,8 @@ public class AppController {
 
 	public static final String FXML_LOGIN = "/app/gui/login/login.fxml";
 	public static final String FXML_REGISTRAR = "/app/gui/registrar/registrar.fxml";
+	public static final String FXML_PRUEBA = "/app/gui/proyectos/pantalla1.fxml";
+	public static final String FXML_PROYECTOS = "/app/gui/proyectos/proyecto.fxml";
 	
 	private static Stage stage;
 
