@@ -1,11 +1,15 @@
 package app.gui.registrar;
 
+import java.security.NoSuchAlgorithmException;
+
 import app.gui.AppController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import modelo.Usuario;
+import service.UsuarioService;
 
 public class RegistrarController extends AppController {
 
@@ -25,12 +29,20 @@ public class RegistrarController extends AppController {
 	private PasswordField txtPass;
 
 	@FXML
-	void continuar(ActionEvent event) {
+	void continuar(ActionEvent event) throws NoSuchAlgorithmException {
 		/*
 		 * Si el correo o usuario ya existe avisar con pop up
 		 * Si todo esta correcto iniciar sesion directamente
 		 * 
 		 */
+		
+		Usuario user = new Usuario();
+		user.setNombre(txtNombre.getText());
+		user.setEmail(txtEmail.getText());
+		user.setPass(txtPass.getText());
+		
+		UsuarioService us = new UsuarioService();
+		us.insertarUsuario(user);
 	}
 
 	@FXML
