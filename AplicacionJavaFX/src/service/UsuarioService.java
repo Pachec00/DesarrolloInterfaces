@@ -2,11 +2,16 @@ package service;
 
 import java.security.NoSuchAlgorithmException;
 
+import javax.management.ObjectName;
+
+import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.TextSearchOptions;
@@ -27,15 +32,24 @@ public class UsuarioService {
 		return result.getInsertedId().toString();
 	}
 
-	public Usuario consultarUsuario(String nombre) {
+	public String consultarUsuario(String email) {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
-		//Bson filter = Filters.eq("nombre", new ObjectId(nombre));
-		TextSearchOptions options = new TextSearchOptions().caseSensitive(true);
-		Bson filter = Filters.text(nombre, options);
+		
+		
+		Bson filter = Filters.eq("email", new ObjectId(email));
 		FindIterable<Usuario> result = c.find(filter);
-		return result.first();
+		
+		
+		return result.first().toString();
+		
+		
 	}
+	
+//	public Boolean consultarEmail(String email) {
+//		MongoDatabase db = MongoSession.getDatabase();
+//		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
+//	}
 
 	// Encriptar pass
 
@@ -48,6 +62,21 @@ public class UsuarioService {
 
 		return output;
 
+	}
+	
+	public void consultarTest(String email) {
+		MongoDatabase db = MongoSession.getDatabase();
+		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
+		
+		Document searchQuery = new Document();
+		searchQuery.put("name", "John");
+		FindIterable<Usuario> cursor = c.find(searchQuery);
+		
+		try (final MongoCursor<Usuario> cursorIterator = cursor.cursor()) {
+		    while (cursorIterator.hasNext()) {
+		        System.out.println(cursorIterator.next());
+		    }
+		}
 	}
 
 }

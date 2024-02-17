@@ -38,14 +38,14 @@ public class loginController extends AppController {
 		
 		String pass  = us.encriptarPass(user.getPass());
 		
-		Usuario usuarioCon = new Usuario();
-		usuarioCon = us.consultarUsuario(user.getNombre());
-		
-		if(usuarioCon.getNombre().equals(user.getNombre())&& usuarioCon.getPass().equals(pass)) {
-			System.out.println(true);
-		}else {
-			System.out.println(false);
-		}
+//		Usuario usuarioCon = new Usuario();
+//		usuarioCon = us.consultarUsuario(user.getNombre());
+//		
+//		if(usuarioCon.getNombre().equals(user.getNombre())&& usuarioCon.getPass().equals(pass)) {
+//			System.out.println(true);
+//		}else {
+//			System.out.println(false);
+//		}
 		
 	}
 
