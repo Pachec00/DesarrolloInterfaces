@@ -1,17 +1,19 @@
 package modelo;
 
+import org.bson.types.ObjectId;
+
 public class Usuario {
 
-	private String id;
+	private ObjectId id;
 	private String nombre;
 	private String email;
 	private String pass;
 
-	public String getId() {
+	public ObjectId getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 

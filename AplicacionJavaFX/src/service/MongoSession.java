@@ -19,7 +19,7 @@ public class MongoSession {
 	private static final String USER = "ceudam";
 	private static final String PASS = "ceudam";
 	private static final String DATABASE = "usuario";
-	private static final String SERVER = "cluster0.ymlgkoe.mongodb.net";
+	private static final String SERVER = "cluster0.5xvz7pl.mongodb.net";
 	
 	private static MongoDatabase database;
 

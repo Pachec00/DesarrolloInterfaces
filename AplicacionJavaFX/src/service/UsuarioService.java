@@ -30,9 +30,7 @@ public class UsuarioService {
 	public Usuario consultarUsuario(String nombre) {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
-		//Bson filter = Filters.eq("nombre", new ObjectId(nombre));
-		TextSearchOptions options = new TextSearchOptions().caseSensitive(true);
-		Bson filter = Filters.text(nombre, options);
+		Bson filter = Filters.eq("nombre", nombre);
 		FindIterable<Usuario> result = c.find(filter);
 		return result.first();
 	}
