@@ -43,7 +43,7 @@ public class loginController extends AppController {
 		
 		if(usuarioCon.getNombre().equals(user.getNombre())&& usuarioCon.getPass().equals(pass)) {
 			System.out.println(true);
-		}else {
+	}else {
 			System.out.println(false);
 		}
 		
