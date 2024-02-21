@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.login.loginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.login.loginController">
    <children>
       <TextField fx:id="txtNombre" layoutX="205.0" layoutY="149.0" />
       <PasswordField fx:id="txtPass" layoutX="205.0" layoutY="247.0" />
@@ -16,8 +16,8 @@
       <Button fx:id="salir" layoutX="38.0" layoutY="28.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
       <Label layoutX="257.0" layoutY="115.0" text="Nombre" />
       <Label layoutX="250.0" layoutY="212.0" text="Contraseña" />
-      <Hyperlink fx:id="forgot" layoutX="192.0" layoutY="346.0" onAction="#restablecer" text="No me acuerdo de la contraseña" />
+      <Hyperlink fx:id="forgot" layoutX="192.0" layoutY="356.0" onAction="#restablecer" text="No me acuerdo de la contraseña" />
       <CheckBox fx:id="recordar" layoutX="196.0" layoutY="292.0" mnemonicParsing="false" text="Recordarme" />
-      <Button fx:id="registrar" layoutX="508.0" layoutY="28.0" mnemonicParsing="false" onAction="#registrar" text="Registrarse" />
+      <Hyperlink fx:id="registrar" layoutX="229.0" layoutY="323.0" onAction="#registrar" text="¿No tienes cuenta?" />
    </children>
 </AnchorPane>

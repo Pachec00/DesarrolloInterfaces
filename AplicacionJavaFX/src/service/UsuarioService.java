@@ -10,7 +10,9 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.TextSearchOptions;
+import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.InsertOneResult;
+import com.mongodb.client.result.UpdateResult;
 
 import modelo.Usuario;
 
@@ -31,6 +33,23 @@ public class UsuarioService {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
 		Bson filter = Filters.eq("nombre", nombre);
+		FindIterable<Usuario> result = c.find(filter);
+		return result.first();
+	}
+	
+	public void updateUsuarioPass(String email, String pass) throws NoSuchAlgorithmException {
+		MongoDatabase db = MongoSession.getDatabase();
+		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
+		Bson filter = Filters.eq("email", email);
+		pass = encriptarPass(pass);
+		Bson updates = Updates.set("pass", pass);
+		UpdateResult result = c.updateOne(filter, updates);
+	}
+	
+	public Usuario consultarEmail(String email) {
+		MongoDatabase db = MongoSession.getDatabase();
+		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
+		Bson filter = Filters.eq("email", email);
 		FindIterable<Usuario> result = c.find(filter);
 		return result.first();
 	}

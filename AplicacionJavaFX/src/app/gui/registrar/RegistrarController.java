@@ -34,16 +34,22 @@ public class RegistrarController extends AppController {
 		/*
 		 * Si el correo o usuario ya existe avisar con pop up
 		 * Si todo esta correcto iniciar sesion directamente
-		 * 
+		 * No dejar insertar con alguno de los campos vacios 
 		 */
 		
-		Usuario user = new Usuario();
-		user.setNombre(txtNombre.getText());
-		user.setEmail(txtEmail.getText());
-		user.setPass(txtPass.getText());
+		if(!txtNombre.getText().isEmpty() && !txtPass.getText().isEmpty()) {
+			Usuario user = new Usuario();
+			user.setNombre(txtNombre.getText());
+			user.setEmail(txtEmail.getText());
+			user.setPass(txtPass.getText());
+			
+			UsuarioService us = new UsuarioService();
+			us.insertarUsuario(user);
+		}else {
+			//Lanzar popup
+		}
 		
-		UsuarioService us = new UsuarioService();
-		us.insertarUsuario(user);
+		
 	}
 
 	@FXML

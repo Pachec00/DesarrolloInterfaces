@@ -3,15 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.recuperacion.RecuperarPassController">
    <children>
-      <Button layoutX="20.0" layoutY="36.0" mnemonicParsing="false" text="Button" />
-    <Button layoutX="152.0" layoutY="36.0" mnemonicParsing="false" text="Button" />
-      <PasswordField layoutX="204.0" layoutY="153.0" />
-      <PasswordField layoutX="204.0" layoutY="251.0" />
-      <Label layoutX="265.0" layoutY="115.0" text="Nueva contraseña" />
+      <Button fx:id="salir" layoutX="20.0" layoutY="36.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+    <Button fx:id="confirmar" disable="true" layoutX="266.0" layoutY="348.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar" />
+      <PasswordField fx:id="pass1" disable="true" layoutX="226.0" layoutY="200.0" />
+      <PasswordField fx:id="pass2" disable="true" layoutX="226.0" layoutY="292.0" />
+      <Label fx:id="lblPass1" layoutX="253.0" layoutY="159.0" text="Nueva contraseña" />
+      <Label fx:id="lblPass2" layoutX="253.0" layoutY="245.0" text="Repita contraseña" />
+      <TextField fx:id="txtEmail" layoutX="227.0" layoutY="101.0" />
+      <Label layoutX="286.0" layoutY="61.0" text="Email" />
+      <Button fx:id="consultar" layoutX="432.0" layoutY="101.0" mnemonicParsing="false" onAction="#consultar" text="Aceptar" />
    </children>
 </AnchorPane>

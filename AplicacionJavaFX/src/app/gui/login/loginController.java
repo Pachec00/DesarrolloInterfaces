@@ -3,6 +3,7 @@ package app.gui.login;
 import java.security.NoSuchAlgorithmException;
 
 import app.gui.AppController;
+import app.gui.recuperacion.RecuperarPassController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,7 +26,7 @@ public class loginController extends AppController {
 	private CheckBox recordar;
 
 	@FXML
-	private Button registrar;
+    private Hyperlink registrar;
 
 	@FXML
 	private Button salir;
@@ -72,7 +73,8 @@ public class loginController extends AppController {
 
 	@FXML
 	void restablecer(ActionEvent event) {
-
+		cambiarVista(FXML_RESTAURARPASS);
+		
 	}
 
 	
