@@ -6,6 +6,8 @@ import app.gui.AppController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import modelo.Usuario;
@@ -15,6 +17,12 @@ public class loginController extends AppController {
 
 	@FXML
 	private Button entrar;
+
+	@FXML
+	private Hyperlink forgot;
+
+	@FXML
+	private CheckBox recordar;
 
 	@FXML
 	private Button registrar;
@@ -32,21 +40,24 @@ public class loginController extends AppController {
 	void entrar(ActionEvent event) throws NoSuchAlgorithmException {
 		Usuario user = new Usuario();
 		UsuarioService us = new UsuarioService();
-		
+
 		user.setNombre(txtNombre.getText());
 		user.setPass(txtPass.getText());
-		
-		String pass  = us.encriptarPass(user.getPass());
-		
+
+		String pass = us.encriptarPass(user.getPass());
+
 		Usuario usuarioCon = new Usuario();
 		usuarioCon = us.consultarUsuario(user.getNombre());
-		
-		if(usuarioCon.getNombre().equals(user.getNombre())&& usuarioCon.getPass().equals(pass)) {
+
+		if (usuarioCon.getNombre().equals(user.getNombre()) && usuarioCon.getPass().equals(pass)) {
+			if(recordar.isSelected()) {
+				//Guardar datos
+			}
 			System.out.println(true);
-	}else {
+		} else {
 			System.out.println(false);
 		}
-		
+
 	}
 
 	@FXML
@@ -59,9 +70,15 @@ public class loginController extends AppController {
 		System.exit(0);
 	}
 
-	public void irProyectos(ActionEvent event) {
-		
+	@FXML
+	void restablecer(ActionEvent event) {
+
 	}
+
 	
-	
+
+	public void irProyectos(ActionEvent event) {
+
+	}
+
 }
