@@ -56,12 +56,13 @@ public class RecuperarPassController extends AppController {
 	void confirmar(ActionEvent event) throws NoSuchAlgorithmException {
 		UsuarioService us = new UsuarioService();
 
-		Usuario user = us.consultarEmail(txtEmail.getText());
+		String email = txtEmail.getText();
+		String pass = pass1.getText();
 
 		// Update en la BBDD
 
 		if (pass1.getText().equals(pass2.getText())) {
-			us.updateUsuarioPass(txtEmail.getText(), pass1.getText());
+			us.updateUsuarioPass(email,pass);
 		}
 
 	}

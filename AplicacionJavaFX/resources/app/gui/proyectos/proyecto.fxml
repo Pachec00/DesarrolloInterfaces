@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -8,17 +10,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.proyectos.ProyectoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.proyectos.ProyectoController">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="669.0" prefWidth="1059.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="table" layoutX="99.0" layoutY="73.0" prefHeight="252.0" prefWidth="431.0">
+            <TableView fx:id="table" layoutX="232.0" layoutY="145.0" prefHeight="431.0" prefWidth="452.0">
               <columns>
-                <TableColumn fx:id="tableProyectoItem" prefWidth="75.0" text="Proyectos" />
+                <TableColumn fx:id="tableProyectoItem" prefWidth="75.0" text="Tareas" />
                   <TableColumn fx:id="tableEstadoItem" prefWidth="75.0" text="Estado" />
+                  <TableColumn prefWidth="74.0" text="Descripcion" />
+                  <TableColumn prefWidth="76.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
               </columns>
             </TableView>
+            <ComboBox fx:id="combo" layoutX="82.0" layoutY="77.0" onAction="#consultarProyecto" prefWidth="150.0" />
+            <Label fx:id="lblNombre" layoutX="406.0" layoutY="69.0" prefHeight="41.0" prefWidth="103.0" text="Nombre proyecto" />
          </children>
       </AnchorPane>
    </center>

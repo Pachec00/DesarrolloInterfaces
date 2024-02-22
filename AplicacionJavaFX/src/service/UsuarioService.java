@@ -3,13 +3,11 @@ package service;
 import java.security.NoSuchAlgorithmException;
 
 import org.bson.conversions.Bson;
-import org.bson.types.ObjectId;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.TextSearchOptions;
 import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
@@ -42,8 +40,9 @@ public class UsuarioService {
 		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
 		Bson filter = Filters.eq("email", email);
 		pass = encriptarPass(pass);
-		Bson updates = Updates.set("pass", pass);
+		Bson updates = Updates.addToSet("pass", pass);
 		UpdateResult result = c.updateOne(filter, updates);
+		System.out.println("Documento actualizado : " + result.getModifiedCount());
 	}
 	
 	public Usuario consultarEmail(String email) {
