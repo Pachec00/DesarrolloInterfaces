@@ -27,10 +27,12 @@ public class ServiceTest {
 		Tarea t1 = new Tarea();
 		Tarea t2 = new Tarea();
 		List<Tarea> listaT = new ArrayList<>();
-		t.setNombre("tareaP3");
+		t.setNombre("tareaP4");
+		t1.setNombre("tareaP4.4");
 		listaT.add(t);
+		listaT.add(t1);
 		
-		p.setTitulo("proyecto3");
+		p.setTitulo("proyecto4");
 		p.setListaTareas(listaT);
 		p.setUserEmail("admin3@admin.com");
 		
