@@ -6,7 +6,7 @@ public class Proyecto {
 
 	private String titulo;
 	private List<Tarea> listaTareas;
-	private Usuario user;
+	private String userEmail;
 
 	public String getTitulo() {
 		return titulo;
@@ -24,14 +24,12 @@ public class Proyecto {
 		this.listaTareas = listaTareas;
 	}
 
-	public Usuario getUser() {
-		return user;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setUser(Usuario user) {
-		this.user = user;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
-	
-	
 
 }

@@ -14,14 +14,14 @@
    <center>
       <AnchorPane prefHeight="669.0" prefWidth="1059.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="table" layoutX="232.0" layoutY="145.0" prefHeight="431.0" prefWidth="452.0">
+            <TableView fx:id="table" layoutX="233.0" layoutY="149.0" prefHeight="431.0" prefWidth="450.0">
               <columns>
-                <TableColumn fx:id="tableProyectoItem" prefWidth="75.0" text="Tareas" />
-                  <TableColumn fx:id="tableEstadoItem" prefWidth="75.0" text="Estado" />
-                  <TableColumn prefWidth="74.0" text="Descripcion" />
-                  <TableColumn prefWidth="76.0" text="Column X" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />
+                  <TableColumn fx:id="descColumn" prefWidth="75.0" text="Descripcion" />
+                  <TableColumn fx:id="inicioColumn" prefWidth="75.0" text="Inicio" />
+                  <TableColumn fx:id="finColumn" prefWidth="75.0" text="Fin" />
+                  <TableColumn fx:id="estadoColumn" prefWidth="75.0" text="Estado" />
+                  <TableColumn fx:id="importanciaColumn" prefWidth="75.0" text="Importancia" />
               </columns>
             </TableView>
             <ComboBox fx:id="combo" layoutX="82.0" layoutY="77.0" onAction="#consultarProyecto" prefWidth="150.0" />
