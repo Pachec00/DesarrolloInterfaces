@@ -40,7 +40,7 @@ public class UsuarioService {
 		MongoCollection<Usuario> c = db.getCollection("usuario", Usuario.class);
 		Bson filter = Filters.eq("email", email);
 		pass = encriptarPass(pass);
-		Bson updates = Updates.addToSet("pass", pass);
+		Bson updates = Updates.set("pass", pass);
 		UpdateResult result = c.updateOne(filter, updates);
 		System.out.println("Documento actualizado : " + result.getModifiedCount());
 	}
