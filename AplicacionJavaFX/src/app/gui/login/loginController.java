@@ -26,7 +26,7 @@ public class loginController extends AppController {
 	private CheckBox recordar;
 
 	@FXML
-    private Hyperlink registrar;
+	private Hyperlink registrar;
 
 	@FXML
 	private Button salir;
@@ -36,25 +36,23 @@ public class loginController extends AppController {
 
 	@FXML
 	private PasswordField txtPass;
-	
-	
 
 	@FXML
 	void entrar(ActionEvent event) throws NoSuchAlgorithmException {
 		Usuario user = new Usuario();
 		UsuarioService us = new UsuarioService();
-		
+
 		user.setNombre(txtNombre.getText());
 		user.setPass(txtPass.getText());
 
 		Usuario u = us.consultarUsuario(user.getNombre());
-		
+
 		String pass = us.encriptarPass(user.getPass());
-		
-		if(u.getNombre().equals(user.getNombre()) && u.getPass().equals(pass)) {
+
+		if (u.getNombre().equals(user.getNombre()) && u.getPass().equals(pass)) {
 			ProyectoController controller = (ProyectoController) cambiarVista(FXML_PROYECTOS);
 			controller.montarCombo(u);
-			
+
 		}
 
 	}
@@ -72,11 +70,7 @@ public class loginController extends AppController {
 	@FXML
 	void restablecer(ActionEvent event) {
 		cambiarVista(FXML_RESTAURARPASS);
-		
+
 	}
-
-	
-
-	
 
 }

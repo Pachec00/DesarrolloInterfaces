@@ -45,7 +45,7 @@ public class RecuperarPassController extends AppController {
 
 		Usuario user = us.consultarEmail(txtEmail.getText());
 
-		if(user.getEmail().equals(txtEmail.getText())) {
+		if (user.getEmail().equals(txtEmail.getText())) {
 			pass1.setDisable(false);
 			pass2.setDisable(false);
 			confirmar.setDisable(false);
@@ -62,8 +62,12 @@ public class RecuperarPassController extends AppController {
 		// Update en la BBDD
 
 		if (pass1.getText().equals(pass2.getText())) {
-			us.updateUsuarioPass(email,pass);
+			us.updateUsuarioPass(email, pass);
 		}
+
+		// Volver al inicio de sesion
+
+		cambiarVista(FXML_LOGIN);
 
 	}
 

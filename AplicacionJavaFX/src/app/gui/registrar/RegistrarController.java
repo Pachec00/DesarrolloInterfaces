@@ -45,9 +45,9 @@ public class RegistrarController extends AppController {
 			
 			UsuarioService us = new UsuarioService();
 			us.insertarUsuario(user);
-		}else {
-			//Lanzar popup
 		}
+		
+		cambiarVista(FXML_LOGIN);
 		
 		
 	}

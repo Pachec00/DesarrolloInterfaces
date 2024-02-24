@@ -1,15 +1,14 @@
 package modelo;
 
-import java.time.LocalDate;
-
 public class Tarea {
 
 	private String nombre;
 	private String descripcion;
-	private LocalDate inicio;
-	private LocalDate fin;
+	private String inicio;
+	private String fin;
 	private String importancia;
 	private String estado;
+	private String color;
 	private Proyecto proyecto;
 
 	public String getNombre() {
@@ -28,19 +27,19 @@ public class Tarea {
 		this.descripcion = descripcion;
 	}
 
-	public LocalDate getInicio() {
+	public String getInicio() {
 		return inicio;
 	}
 
-	public void setInicio(LocalDate inicio) {
+	public void setInicio(String inicio) {
 		this.inicio = inicio;
 	}
 
-	public LocalDate getFin() {
+	public String getFin() {
 		return fin;
 	}
 
-	public void setFin(LocalDate fin) {
+	public void setFin(String fin) {
 		this.fin = fin;
 	}
 
@@ -67,7 +66,13 @@ public class Tarea {
 	public void setProyecto(Proyecto proyecto) {
 		this.proyecto = proyecto;
 	}
-	
-	
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 
 }

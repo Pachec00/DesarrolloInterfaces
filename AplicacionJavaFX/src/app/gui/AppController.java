@@ -15,7 +15,10 @@ public class AppController {
 	public static final String FXML_PRUEBA = "/app/gui/proyectos/pantalla1.fxml";
 	public static final String FXML_PROYECTOS = "/app/gui/proyectos/proyecto.fxml";
 	public static final String FXML_RESTAURARPASS = "/app/gui/recuperar/recuperar.fxml";
-	
+	public static final String FXML_NUEVO_PROYECTOS = "/app/gui/proyectos/nuevoProyecto.fxml";
+	public static final String FXML_NUEVA_TAREA = "/app/gui/tarea/nuevaTarea.fxml";
+	public static final String FXML_EDITAR_TAREA = "/app/gui/tarea/editarTarea.fxml";
+
 	private static Stage stage;
 
 	public AppController() {

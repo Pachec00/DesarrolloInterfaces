@@ -31,13 +31,17 @@ public class ServiceTest {
 		t1.setNombre("tareaP4.4");
 		listaT.add(t);
 		listaT.add(t1);
-		
-		p.setTitulo("proyecto4");
-		p.setListaTareas(listaT);
-		p.setUserEmail("admin3@admin.com");
-		
-		ps.insertarProyecto(p);
-		
-		
+
+//		p.setTitulo("proyecto4");
+//		p.setListaTareas(listaT);
+//		p.setUserEmail("admin3@admin.com");
+//		
+//		ps.insertarProyecto(p);
+
+		Usuario u = us.consultarUsuario("admin");
+		System.out.println(u.getNombre());
+
+		// ps.updateTarea(listaT, user.getEmail());
+
 	}
 }

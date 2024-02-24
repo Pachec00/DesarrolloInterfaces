@@ -1,15 +1,15 @@
 package app.gui.proyectos;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import app.gui.AppController;
-
+import app.gui.tareas.TareaController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -17,6 +17,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import modelo.Proyecto;
 import modelo.Tarea;
 import modelo.Usuario;
@@ -37,10 +38,13 @@ public class ProyectoController extends AppController {
 	private TableColumn<Tarea, String> estadoColumn;
 
 	@FXML
-	private TableColumn<Tarea, LocalDate> finColumn;
+	private TableColumn<Tarea, String> finColumn;
 
 	@FXML
-	private TableColumn<Tarea, LocalDate> inicioColumn;
+	private TableColumn<Tarea, String> inicioColumn;
+
+	@FXML
+	private TableColumn<Tarea, String> colorColumn;
 
 	@FXML
 	private Label lblNombre;
@@ -75,11 +79,19 @@ public class ProyectoController extends AppController {
 	@FXML
 	private TableColumn<Tarea, String> importanciaColumn;
 
+	@FXML
+	private Button nuevaTarea;
+
+	@FXML
+	private Button btnEditar;
+
 	private ObservableList<Tarea> datos;
 
 	private Usuario usuario;
-	
+
 	private List<Proyecto> listaProyectos;
+
+	private String titulo;
 
 	@FXML
 	void ajustes(ActionEvent event) {
@@ -94,11 +106,15 @@ public class ProyectoController extends AppController {
 		PropertyValueFactory<Tarea, String> factoryImportancia = new PropertyValueFactory<>("importancia");
 		PropertyValueFactory<Tarea, String> factoryInicio = new PropertyValueFactory<>("inicio");
 		PropertyValueFactory<Tarea, String> factoryFin = new PropertyValueFactory<>("fin");
+		PropertyValueFactory<Tarea, String> factoryColor = new PropertyValueFactory<>("color");
 
 		nombreColumn.setCellValueFactory(factoryNombre);
 		descColumn.setCellValueFactory(factoryDesc);
 		estadoColumn.setCellValueFactory(factoryEstado);
 		importanciaColumn.setCellValueFactory(factoryImportancia);
+		finColumn.setCellValueFactory(factoryInicio);
+		inicioColumn.setCellValueFactory(factoryFin);
+		colorColumn.setCellValueFactory(factoryColor);
 
 		// Pasar fechas a string
 
@@ -109,19 +125,19 @@ public class ProyectoController extends AppController {
 
 	@FXML
 	void consultarProyecto(ActionEvent event) {
-		String titulo = combo.getSelectionModel().getSelectedItem();
+		titulo = combo.getSelectionModel().getSelectedItem();
 		lblNombre.setText(titulo.toUpperCase());
 
 		List<Tarea> listaT = new ArrayList<>();
-		
-		for(Proyecto p : listaProyectos) {
-			if(p.getTitulo().equals(titulo)) {
-				for(Tarea t : p.getListaTareas()) {
+
+		for (Proyecto p : listaProyectos) {
+			if (p.getTitulo().equals(titulo)) {
+				for (Tarea t : p.getListaTareas()) {
 					listaT.add(t);
 				}
 			}
 		}
-		
+
 		datos.setAll(listaT);
 
 	}
@@ -148,17 +164,43 @@ public class ProyectoController extends AppController {
 
 	@FXML
 	void nuevo(ActionEvent event) {
+		NuevoProyectoController controller = (NuevoProyectoController) cambiarVista(FXML_NUEVO_PROYECTOS);
+		controller.getUserData(usuario);
 
 	}
 
 	@FXML
 	void salir(ActionEvent event) {
-
+		System.exit(0);
 	}
 
 	@FXML
 	void sesion(ActionEvent event) {
+		cambiarVista(FXML_LOGIN);
+	}
 
+	@FXML
+	void tareaNueva(ActionEvent event) {
+		TareaController controller = (TareaController) cambiarVista(FXML_NUEVA_TAREA);
+
+		for (Proyecto p : listaProyectos) {
+			if (p.getTitulo().equals(combo.getSelectionModel().getSelectedItem())) {
+				controller.getData(p, usuario.getEmail(), usuario);
+
+			}
+		}
+	}
+
+	@FXML
+	void editarTarea(ActionEvent event) {
+		TareaController controller = (TareaController) cambiarVista(FXML_NUEVA_TAREA);
+
+		for (Proyecto p : listaProyectos) {
+			if (p.getTitulo().equals(combo.getSelectionModel().getSelectedItem())) {
+				controller.getData(p, usuario.getEmail(), usuario);
+
+			}
+		}
 	}
 
 }

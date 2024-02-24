@@ -1,13 +1,12 @@
 package app;
 
-
 import app.gui.AppController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class App  extends Application{
+public class App extends Application {
 
 	public static void main(String[] args) {
 		launch();
@@ -26,7 +25,6 @@ public class App  extends Application{
 		primaryStage.setResizable(false);
 
 		primaryStage.show();
-		
-		
+
 	}
 }
